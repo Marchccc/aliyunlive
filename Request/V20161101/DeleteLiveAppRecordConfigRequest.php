@@ -18,8 +18,8 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-
-class DeleteLiveAppRecordConfigRequest extends \RpcAcsRequest
+use Aliyun\Core\RpcAcsRequest;// sscs update
+class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{

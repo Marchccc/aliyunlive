@@ -18,8 +18,8 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-
-class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
+use Aliyun\Core\RpcAcsRequest;// sscs update
+class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{

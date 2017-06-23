@@ -18,8 +18,8 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-
-class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
+use Aliyun\Core\RpcAcsRequest;// sscs update
+class DescribeLiveStreamSnapshotInfoRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{

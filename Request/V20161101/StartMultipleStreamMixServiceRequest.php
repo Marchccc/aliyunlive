@@ -18,8 +18,8 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-
-class StartMultipleStreamMixServiceRequest extends \RpcAcsRequest
+use Aliyun\Core\RpcAcsRequest;// sscs update
+class StartMultipleStreamMixServiceRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{

@@ -18,8 +18,8 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-
-class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
+use Aliyun\Core\RpcAcsRequest;// sscs update
+class AddLiveStreamTranscodeRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{

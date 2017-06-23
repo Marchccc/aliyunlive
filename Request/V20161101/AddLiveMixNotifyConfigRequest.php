@@ -18,8 +18,8 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-
-class AddLiveMixNotifyConfigRequest extends \RpcAcsRequest
+use Aliyun\Core\RpcAcsRequest;// sscs update
+class AddLiveMixNotifyConfigRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
