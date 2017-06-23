@@ -1,0 +1,27 @@
+{
+    "name": "sscs/aliyunlive",
+    "description": "Encapsulation Aliyun live API",
+    "keywords": [
+        "aliyun",
+        "aliyunlive",
+        "live"
+    ],
+    "license": "MIT",
+    "homepage": "https://help.aliyun.com/document_detail/35416.html?spm=5176.doc45205.6.609.iFuI6U",
+    "authors": [
+        {
+            "name": "sscs",
+            "email": "laosql@163.com",
+            "homepage": "http://rockjun.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "live\\Request\\V20161101\\": "Request/V20161101/"
+        }
+    }
+}
