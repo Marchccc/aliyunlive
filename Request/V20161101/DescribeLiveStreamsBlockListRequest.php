@@ -18,19 +18,24 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsBlockList");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
 
+	private  $domainName;
+
+	private  $pageSize;
+
 	private  $ownerId;
 
-	private  $domainName;
+	private  $pageNum;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -39,6 +44,24 @@ class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {
@@ -50,13 +73,13 @@ class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getPageNum() {
+		return $this->pageNum;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setPageNum($pageNum) {
+		$this->pageNum = $pageNum;
+		$this->queryParameters["PageNum"]=$pageNum;
 	}
 	
 }

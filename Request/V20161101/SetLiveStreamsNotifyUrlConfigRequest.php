@@ -18,38 +18,32 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig");
+		parent::__construct("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
-
-	private  $ownerId;
+	private  $authKey;
 
 	private  $domainName;
 
 	private  $notifyUrl;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $ownerId;
+
+	private  $authType;
+
+	public function getAuthKey() {
+		return $this->authKey;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setAuthKey($authKey) {
+		$this->authKey = $authKey;
+		$this->queryParameters["AuthKey"]=$authKey;
 	}
 
 	public function getDomainName() {
@@ -68,6 +62,24 @@ class SetLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest
 	public function setNotifyUrl($notifyUrl) {
 		$this->notifyUrl = $notifyUrl;
 		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAuthType() {
+		return $this->authType;
+	}
+
+	public function setAuthType($authType) {
+		$this->authType = $authType;
+		$this->queryParameters["AuthType"]=$authType;
 	}
 	
 }

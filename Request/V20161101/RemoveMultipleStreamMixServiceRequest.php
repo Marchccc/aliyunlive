@@ -18,29 +18,39 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "RemoveMultipleStreamMixService");
+		parent::__construct("live", "2016-11-01", "RemoveMultipleStreamMixService", "live", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domainName;
 
 	private  $appName;
 
-	private  $streamName;
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $mixStreamName;
 
 	private  $mixDomainName;
 
+	private  $ownerId;
+
 	private  $mixAppName;
 
-	private  $mixStreamName;
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -49,15 +59,6 @@ class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getDomainName() {
@@ -69,22 +70,13 @@ class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getMixStreamName() {
+		return $this->mixStreamName;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setMixStreamName($mixStreamName) {
+		$this->mixStreamName = $mixStreamName;
+		$this->queryParameters["MixStreamName"]=$mixStreamName;
 	}
 
 	public function getMixDomainName() {
@@ -96,6 +88,15 @@ class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest
 		$this->queryParameters["MixDomainName"]=$mixDomainName;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getMixAppName() {
 		return $this->mixAppName;
 	}
@@ -105,13 +106,13 @@ class RemoveMultipleStreamMixServiceRequest extends RpcAcsRequest
 		$this->queryParameters["MixAppName"]=$mixAppName;
 	}
 
-	public function getMixStreamName() {
-		return $this->mixStreamName;
+	public function getStreamName() {
+		return $this->streamName;
 	}
 
-	public function setMixStreamName($mixStreamName) {
-		$this->mixStreamName = $mixStreamName;
-		$this->queryParameters["MixStreamName"]=$mixStreamName;
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

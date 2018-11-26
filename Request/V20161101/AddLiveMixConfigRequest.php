@@ -18,49 +18,32 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class AddLiveMixConfigRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveMixConfig");
+		parent::__construct("live", "2016-11-01", "AddLiveMixConfig", "live", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domainName;
-
-	private  $appName;
 
 	private  $template;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $appName;
+
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $ownerId;
+
+	public function getTemplate() {
+		return $this->template;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setTemplate($template) {
+		$this->template = $template;
+		$this->queryParameters["Template"]=$template;
 	}
 
 	public function getAppName() {
@@ -72,13 +55,31 @@ class AddLiveMixConfigRequest extends RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getTemplate() {
-		return $this->template;
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setTemplate($template) {
-		$this->template = $template;
-		$this->queryParameters["Template"]=$template;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

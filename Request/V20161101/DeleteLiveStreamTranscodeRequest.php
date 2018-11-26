@@ -18,50 +18,24 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamTranscode");
+		parent::__construct("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domain;
 
 	private  $app;
 
 	private  $template;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+	private  $securityToken;
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
+	private  $domain;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDomain() {
-		return $this->domain;
-	}
-
-	public function setDomain($domain) {
-		$this->domain = $domain;
-		$this->queryParameters["Domain"]=$domain;
-	}
+	private  $ownerId;
 
 	public function getApp() {
 		return $this->app;
@@ -79,6 +53,33 @@ class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest
 	public function setTemplate($template) {
 		$this->template = $template;
 		$this->queryParameters["Template"]=$template;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomain() {
+		return $this->domain;
+	}
+
+	public function setDomain($domain) {
+		$this->domain = $domain;
+		$this->queryParameters["Domain"]=$domain;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

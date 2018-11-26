@@ -18,51 +18,34 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domainName;
-
-	private  $appName;
-
-	private  $streamName;
 
 	private  $recordId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $appName;
+
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getRecordId() {
+		return $this->recordId;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setRecordId($recordId) {
+		$this->recordId = $recordId;
+		$this->queryParameters["RecordId"]=$recordId;
 	}
 
 	public function getAppName() {
@@ -74,6 +57,33 @@ class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getStreamName() {
 		return $this->streamName;
 	}
@@ -81,15 +91,6 @@ class DescribeLiveStreamRecordIndexFileRequest extends RpcAcsRequest
 	public function setStreamName($streamName) {
 		$this->streamName = $streamName;
 		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getRecordId() {
-		return $this->recordId;
-	}
-
-	public function setRecordId($recordId) {
-		$this->recordId = $recordId;
-		$this->queryParameters["RecordId"]=$recordId;
 	}
 	
 }

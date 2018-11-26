@@ -18,48 +18,44 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsPublishList");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
-
-	private  $ownerId;
+	private  $streamType;
 
 	private  $domainName;
 
-	private  $appName;
+	private  $endTime;
 
-	private  $streamName;
+	private  $orderBy;
 
 	private  $startTime;
 
-	private  $endTime;
-
-	private  $pageSize;
+	private  $ownerId;
 
 	private  $pageNumber;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $appName;
+
+	private  $pageSize;
+
+	private  $streamName;
+
+	private  $queryType;
+
+	public function getStreamType() {
+		return $this->streamType;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setStreamType($streamType) {
+		$this->streamType = $streamType;
+		$this->queryParameters["StreamType"]=$streamType;
 	}
 
 	public function getDomainName() {
@@ -71,22 +67,22 @@ class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
+	public function getOrderBy() {
+		return $this->orderBy;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setOrderBy($orderBy) {
+		$this->orderBy = $orderBy;
+		$this->queryParameters["OrderBy"]=$orderBy;
 	}
 
 	public function getStartTime() {
@@ -98,13 +94,31 @@ class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getPageSize() {
@@ -116,13 +130,22 @@ class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getStreamName() {
+		return $this->streamName;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getQueryType() {
+		return $this->queryType;
+	}
+
+	public function setQueryType($queryType) {
+		$this->queryType = $queryType;
+		$this->queryParameters["QueryType"]=$queryType;
 	}
 	
 }

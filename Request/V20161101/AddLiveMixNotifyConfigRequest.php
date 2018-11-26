@@ -18,21 +18,22 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class AddLiveMixNotifyConfigRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveMixNotifyConfig");
+		parent::__construct("live", "2016-11-01", "AddLiveMixNotifyConfig", "live", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $domainName;
 
 	private  $notifyUrl;
+
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -41,15 +42,6 @@ class AddLiveMixNotifyConfigRequest extends RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getDomainName() {
@@ -68,6 +60,15 @@ class AddLiveMixNotifyConfigRequest extends RpcAcsRequest
 	public function setNotifyUrl($notifyUrl) {
 		$this->notifyUrl = $notifyUrl;
 		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

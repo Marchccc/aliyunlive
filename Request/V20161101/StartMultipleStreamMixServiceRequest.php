@@ -18,25 +18,35 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class StartMultipleStreamMixServiceRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "StartMultipleStreamMixService");
+		parent::__construct("live", "2016-11-01", "StartMultipleStreamMixService", "live", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domainName;
 
 	private  $appName;
 
-	private  $streamName;
+	private  $securityToken;
+
+	private  $domainName;
 
 	private  $mixTemplate;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -45,15 +55,6 @@ class StartMultipleStreamMixServiceRequest extends RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getDomainName() {
@@ -65,13 +66,22 @@ class StartMultipleStreamMixServiceRequest extends RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getMixTemplate() {
+		return $this->mixTemplate;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setMixTemplate($mixTemplate) {
+		$this->mixTemplate = $mixTemplate;
+		$this->queryParameters["MixTemplate"]=$mixTemplate;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getStreamName() {
@@ -81,15 +91,6 @@ class StartMultipleStreamMixServiceRequest extends RpcAcsRequest
 	public function setStreamName($streamName) {
 		$this->streamName = $streamName;
 		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getMixTemplate() {
-		return $this->mixTemplate;
-	}
-
-	public function setMixTemplate($mixTemplate) {
-		$this->mixTemplate = $mixTemplate;
-		$this->queryParameters["MixTemplate"]=$mixTemplate;
 	}
 	
 }

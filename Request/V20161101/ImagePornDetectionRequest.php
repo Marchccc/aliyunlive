@@ -18,7 +18,7 @@
  * under the License.
  */
 namespace live\Request\V20161101;
-use Aliyun\Core\RpcAcsRequest;// sscs update
+use Aliyun\Core\RpcAcsRequest;
 class ImagePornDetectionRequest extends RpcAcsRequest
 {
 	function  __construct()
